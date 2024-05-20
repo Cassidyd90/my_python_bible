@@ -1,0 +1,4 @@
+name,age,school,degree
+rolf,25,mit,computer science
+mina,33,paris,maths
+dylan,60,galway,cooking
