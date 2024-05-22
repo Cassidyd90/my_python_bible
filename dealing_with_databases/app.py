@@ -3,7 +3,10 @@ This is core script for creating a book store app
 User menu
 """
 
-from utils import database
+from utils.database import books
+from utils.crud_functions import books_add, books_list, book_finished, book_delete
+
+
 
 USER_CHOICE = """
 Enter:
@@ -17,16 +20,29 @@ Your choice:
 """
 
 
-def menu():
-    user_input = input(USER_CHOICE)
-    while user_input != 'q':
-        pass
 
 
+def user_menu():
+    
+    selection = input(USER_CHOICE)
+    while selection != 'q':
+        if selection == "a":
+            books_add()
 
-"""
-def prompt_add_book()
-def list_books()
-def prompt_book_read()
-def prompt_delete_book()
-"""
+        elif selection == "l":
+            books_list()
+
+        elif selection == "f":
+            book_finished()
+
+        elif selection == 'd':
+            book_delete()
+
+        else:
+            print('Unknown command. Please try again.')
+
+        selection = input(USER_CHOICE)
+
+
+user_menu()
+
